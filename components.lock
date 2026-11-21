@@ -1,0 +1,31 @@
+# Exact components used by the tested EFI. scripts/fetch-components.sh downloads
+# these and refuses anything whose SHA-256 does not match.
+#
+# release <dir> <github-repo> <tag> <asset> <sha256>
+release opencore           acidanthera/OpenCorePkg        1.0.8   OpenCore-1.0.8-RELEASE.zip            2011e8b7216ecb2645d97ea710df965947edd406846e92050b9bc4190be6d27b
+release lilu               acidanthera/Lilu               1.7.2   Lilu-1.7.2-RELEASE.zip                53967d7dcfaab01023a33df2e969a89522f13d6654a6a56ac4711b62dabf3ab8
+release virtualsmc         acidanthera/VirtualSMC         1.3.8   VirtualSMC-1.3.8-RELEASE.zip          2e29a8aaf91b4eb0bcdf5913ed17e70f5cf76531122acd4132eff7813a54de8b
+release nvmefix            acidanthera/NVMeFix            1.1.3   NVMeFix-1.1.3-RELEASE.zip             e1d5657ab7ac31f69771708f7b80bf218ab9aa0b8e4c4fe6ff943983037e3dfb
+release restrictevents     acidanthera/RestrictEvents     1.1.6   RestrictEvents-1.1.6-RELEASE.zip      98170dfae195ddd28b5d95e3f040125a13ca783bcb9bd1e5b8c588e217b14ee6
+release voodoops2          acidanthera/VoodooPS2          2.3.7   VoodooPS2Controller-2.3.7-RELEASE.zip d5483298736ba4b3b82c7203d9a46968c668fb7af732b8b22c2096deb0acf83f
+release brcmpatchram       acidanthera/BrcmPatchRAM       2.7.2   BrcmPatchRAM-2.7.2-RELEASE.zip        e1c1c55347526d031a8ae2fdd1f52efa3019161e497fb38e1cfa809752f8af21
+release ecenabler          1Revenger1/ECEnabler           1.0.6   ECEnabler-1.0.6-RELEASE.zip           e21149519856308c6c4c06e0917aef9e3423ff3e23b6ea77989099f4f2cf0f0a
+release cputopologyrebuild b00t0x/CpuTopologyRebuild      2.0.2   CpuTopologyRebuild-2.0.2-RELEASE.zip  c25d07464d2c9adf120dbf13a50321ff1bdb273290a5e82235eef4740db7b911
+release usbtoolbox         USBToolBox/kext                1.2.0   USBToolBox-1.2.0-RELEASE.zip          c315a3a5acfd496dd97d0d19b4fbd1d487103d2fd541c5651583d4c9cebcfe07
+release whateverxe         b00t0x/WhateverXe              0.8.3   WhateverXe-0.8.3-RELEASE.zip          d56e3a7055b1dbb6f75f9f155bc4fe1ce1b5989b6038e79902e3a6cccce762e2
+release whateverxe-gfx     b00t0x/WhateverXe-Graphics     v0.4.4  WhateverXe-Graphics-0.4.4.pkg         f4c2d680a7c52c33a3f038ce6945da0aa2cc044e62b935a52ea046c7c473cfec
+release amfianchor         b00t0x/AMFIAnchor              0.1.2   AMFIAnchor-0.1.2-Release.zip          7c4f416bf97e599cf9fe85347ad55a3c454e0eb9944a439a1b04ad16e8beb8bd
+release cs8409audio        nwrafael/CS8409Audio           v1.1.0  CS8409Audio-1.1.0-RELEASE.zip         5942037352dc3ee8d574830b119088dc6587857d6169ba5c7244d6ddc3c56159
+#
+# Dortania build-repo: builds of upstream master, used where the latest release is too old.
+# dortania <dir> <release-tag> <asset> <sha256>
+dortania voodooi2c         VoodooI2C-927797d              release.zip                          3086735ac73a736cde53b0f06c8c9c0a551be9f912d8c9fbf5d04b8ecd973d89
+dortania brightnesskeys    BrightnessKeys-37bdf47         BrightnessKeys-1.0.4-RELEASE.zip     8fc2be5041801cc4fbf481153034b975ed18e02af312d6316531ee859f764126
+#
+# Git repositories pinned to a commit.
+# git <dir> <url> <commit>
+git rtl88wifi              https://github.com/X1REN41L/RTL88WiFi                                  8cebe79209d05e8760e17603af6a344941920381
+git amfianchor-src         https://github.com/b00t0x/AMFIAnchor                                   a53eb2f4187ea7c83163ef68c21288d8fa1781f1
+git realtek-bt-src         https://github.com/thegwchr/RealtekBluetoothFirmware                   22e501a8a0a7aba8bb4e594bc6f40b1a67391af9
+git ref-inspiron3520       https://github.com/pedrovrs301-gif/dell-inspiron-3520-i5-1235u-sequoia 8ce0e63a79f7b9d0348fd11057dd8187f7f9b477
+git ref-ideapad3           https://github.com/Aniket601/AlderLake-IrisXe-OpenCore                 0df016805ed681e59cdf20bae15f6bea3297d880

@@ -1,0 +1,7 @@
+private/
+build/
+build.*/
+downloads/
+backups/
+referencias/
+.DS_Store
