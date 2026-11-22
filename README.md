@@ -37,7 +37,9 @@ Tested on macOS Tahoe 26.7.3 (25G342), OpenCore 1.0.8, Dell BIOS 1.30.0.
 | Storage | ADATA NVMe | NVMeFix | ✅ |
 | Battery | Dell PG8YJ3A | SMCBatteryManager, ECEnabler | ✅ charge level, discharge, health |
 | USB | — | USBToolBox + Inspiron 3520 port map | ✅ |
-| Sleep, webcam | — | — | ❓ not tested yet |
+| Sleep | firmware exposes only S0ix (Modern Standby) | [`lid-guard`](scripts/lid-guard/) | ❌ macOS never completes sleep (`kPMPCIUnsupported`); a closed lid leaves the laptop running. `lid-guard` enables Low Power Mode and shuts down after 15 min closed |
+| Display after opening the lid | eDP | WhateverXe + `lid-guard` | ⚠️ sometimes stays black (link training fails); `lid-guard` re-cycles the display, or close and reopen the lid |
+| Webcam | — | — | ❓ not tested yet |
 
 The full list of what was changed, and why, is in [docs/NOTES.md](docs/NOTES.md).
 
@@ -67,6 +69,7 @@ installation and the steps inside macOS. If something fails, see
 | `scripts/build-bluetooth.sh` | builds the patched Bluetooth kext (macOS only) |
 | `scripts/make-usb-linux.sh` | writes the USB installer from Linux |
 | `scripts/edid-force-rgb.py` | EDID override for HDMI TVs/monitors with wrong colours |
+| `scripts/lid-guard/` | service that cools down and shuts down the laptop with the lid closed (`sudo scripts/lid-guard/install.sh`) |
 | `docs/` | installation guide, troubleshooting, technical notes |
 
 `downloads/`, `build/` and `private/` are created locally and are not part of the repository.

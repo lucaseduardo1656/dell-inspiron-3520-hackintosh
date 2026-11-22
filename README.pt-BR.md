@@ -37,7 +37,9 @@ Testado no macOS Tahoe 26.7.3 (25G342), OpenCore 1.0.8 e BIOS Dell 1.30.0.
 | Armazenamento | NVMe ADATA | NVMeFix | ✅ |
 | Bateria | Dell PG8YJ3A | SMCBatteryManager, ECEnabler | ✅ nível de carga, descarga, saúde |
 | USB | — | USBToolBox + mapa de portas do Inspiron 3520 | ✅ |
-| Repouso, webcam | — | — | ❓ ainda não testado |
+| Repouso | firmware só com S0ix (Modern Standby) | [`lid-guard`](scripts/lid-guard/) | ❌ o macOS nunca completa o repouso (`kPMPCIUnsupported`); a tampa fechada deixa o notebook ligado. O `lid-guard` liga o Modo de Pouca Energia e desliga após 15 min fechado |
+| Tela ao abrir a tampa | eDP | WhateverXe + `lid-guard` | ⚠️ às vezes volta preta (link training falha); o `lid-guard` refaz o ciclo da tela, ou feche e abra a tampa |
+| Webcam | — | — | ❓ ainda não testado |
 
 A lista completa do que foi alterado, e por quê, está em [docs/pt-BR/NOTAS.md](docs/pt-BR/NOTAS.md).
 
@@ -67,6 +69,7 @@ passos dentro do macOS. Se algo falhar, veja a
 | `scripts/build-bluetooth.sh` | compila o kext de Bluetooth com o patch (só no macOS) |
 | `scripts/make-usb-linux.sh` | grava o pendrive de instalação a partir do Linux |
 | `scripts/edid-force-rgb.py` | override de EDID para TVs e monitores HDMI com cores erradas |
+| `scripts/lid-guard/` | serviço que esfria e desliga o notebook com a tampa fechada (`sudo scripts/lid-guard/install.sh`) |
 | `docs/` | guia de instalação, solução de problemas e notas técnicas |
 
 As pastas `downloads/`, `build/` e `private/` são criadas localmente e não fazem parte do
